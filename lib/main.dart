@@ -1,11 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:networking_tools_demo/model/data_sources/two_ip_data_source.dart';
 
+import 'model/data_sources/two_ip_data_source.dart';
 import 'pages/home/view/home_page.dart';
+import 'utils/debug_bloc_observer.dart';
 
 void main() {
+  Bloc.observer = DebugBlocObserver();
+
   runApp(const MyApp());
 }
 

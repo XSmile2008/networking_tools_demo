@@ -17,7 +17,8 @@ class IpInfoCubit extends Cubit<IpInfoState> {
         super(const IpInfoState());
 
   void onIpChanged(String ip) {
-    emit(state.withIpChanged(ip));
+    final newState = state.withIpChanged(ip);
+    emit(newState);
   }
 
   void onCheckPressed() async {

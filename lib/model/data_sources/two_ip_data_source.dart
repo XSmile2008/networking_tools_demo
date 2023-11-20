@@ -11,12 +11,12 @@ class TwoIpDataSource {
   }) : _dio = dio;
 
   Future<IpAddressInfo> getIpAddressInfo(String ip) => _dio.get(
-        'geo.json',
+        '/geo.json',
         queryParameters: {'ip': ip},
       ).then((response) => IpAddressInfo.fromJson(response.data));
 
   Future<MacAddressInfo> getMacAddressInfo(String mac) => _dio.get(
-        'mac.json',
+        '/mac.json',
         queryParameters: {'mac': mac},
       ).then((response) => MacAddressInfo.fromJson(response.data));
 }

@@ -27,17 +27,14 @@ class IpInfoState extends Equatable
         isLoading,
         ip,
         ipValidationErrorMessage,
+        ipAddressInfo,
       ];
 
   IpInfoState withIpChanged(String ip) {
     final bool isValidIp = _validIpRegExp.hasMatch(ip);
     return copyWith(
       ip: ip,
-      ipValidationErrorMessage: ipValidationErrorMessage != null
-          ? isValidIp
-              ? null
-              : 'Invalid IP address'
-          : null,
+      ipValidationErrorMessage: isValidIp ? null : ipValidationErrorMessage,
     );
   }
 
@@ -52,7 +49,7 @@ class IpInfoState extends Equatable
         ipAddressInfo: ipAddressInfo,
       );
 
-IpInfoState idle() => copyWith(isLoading: false);
+  IpInfoState idle() => copyWith(isLoading: false);
 
   IpInfoState copyWith({
     List<IpInfoSideEffect>? sideEffects,

@@ -40,7 +40,7 @@ void main() {
   });
 
   group('onIpChanged tests', () {
-    blocTest(
+    blocTest<IpInfoCubit, IpInfoState>(
       '''.
       ## When:
       - `onIpChanged` is called with correct IP address as `ip`
@@ -61,7 +61,7 @@ void main() {
       ],
     );
 
-    blocTest(
+    blocTest<IpInfoCubit, IpInfoState>(
       '''.
       ## When:
       - `onIpChanged` is called with not valid IP address as `ip`
@@ -82,7 +82,7 @@ void main() {
       ],
     );
 
-    blocTest(
+    blocTest<IpInfoCubit, IpInfoState>(
       '''.
       ## Given:
       - state is `IpInfoState` with:
@@ -111,7 +111,7 @@ void main() {
       ],
     );
 
-    blocTest(
+    blocTest<IpInfoCubit, IpInfoState>(
       '''.
       ## Given:
       - state is `IpInfoState` with:

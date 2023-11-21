@@ -31,10 +31,13 @@ class IpInfoState extends Equatable
       ];
 
   IpInfoState withIpChanged(String ip) {
-    final bool isValidIp = _validIpRegExp.hasMatch(ip);
-    return copyWith(
+    final bool isValidNewIp = _validIpRegExp.hasMatch(ip);
+    return IpInfoState(
+      sideEffects: sideEffects,
+      isLoading: isLoading,
       ip: ip,
-      ipValidationErrorMessage: isValidIp ? null : ipValidationErrorMessage,
+      ipValidationErrorMessage: isValidNewIp ? null : ipValidationErrorMessage,
+      ipAddressInfo: ipAddressInfo,
     );
   }
 

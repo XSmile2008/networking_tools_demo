@@ -11,6 +11,7 @@ class IpInfoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final IpInfoCubit cubit = context.read();
+    final infoItemTextStyle = Theme.of(context).textTheme.headlineSmall;
     return BlocSideEffectsHandler<IpInfoCubit, IpInfoState, IpInfoSideEffect>(
       listener: (context, sideEffect) {},
       child: Scaffold(
@@ -33,21 +34,49 @@ class IpInfoView extends StatelessWidget {
                   if (state.ipAddressInfo != null)
                     Expanded(
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('IP address: ${state.ipAddressInfo!.ip}'),
+                          Text(
+                            'IP address: ${state.ipAddressInfo!.ip}',
+                            style: infoItemTextStyle,
+                          ),
                           Text(
                             'Country code: ${state.ipAddressInfo!.countryCode}',
+                            style: infoItemTextStyle,
                           ),
-                          Text('Country: ${state.ipAddressInfo!.country}'),
-                          Text('Region: ${state.ipAddressInfo!.region}'),
-                          Text('City: ${state.ipAddressInfo!.city}'),
-                          Text('Zip code: ${state.ipAddressInfo!.zipCode}'),
-                          Text('Latitude: ${state.ipAddressInfo!.latitude}'),
-                          Text('Longitude: ${state.ipAddressInfo!.longitude}'),
-                          Text('Time zone: ${state.ipAddressInfo!.timeZone}'),
+                          Text(
+                            'Country: ${state.ipAddressInfo!.country}',
+                            style: infoItemTextStyle,
+                          ),
+                          Text(
+                            'Region: ${state.ipAddressInfo!.region}',
+                            style: infoItemTextStyle,
+                          ),
+                          Text(
+                            'City: ${state.ipAddressInfo!.city}',
+                            style: infoItemTextStyle,
+                          ),
+                          Text(
+                            'Zip code: ${state.ipAddressInfo!.zipCode}',
+                            style: infoItemTextStyle,
+                          ),
+                          Text(
+                            'Latitude: ${state.ipAddressInfo!.latitude}',
+                            style: infoItemTextStyle,
+                          ),
+                          Text(
+                            'Longitude: ${state.ipAddressInfo!.longitude}',
+                            style: infoItemTextStyle,
+                          ),
+                          Text(
+                            'Time zone: ${state.ipAddressInfo!.timeZone}',
+                            style: infoItemTextStyle,
+                          ),
                         ],
                       ),
-                    ),
+                    )
+                  else
+                    const Spacer(),
                   const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: cubit.onCheckPressed,

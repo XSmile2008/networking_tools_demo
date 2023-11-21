@@ -8,6 +8,6 @@ class IpInfoRepository {
     required TwoIpDataSource twoIpDataSource,
   }) : _twoIpDataSource = twoIpDataSource;
 
-  Future<IpAddressInfo> getIpAddressInfo(String ip) =>
+  Future<IpAddressInfo?> getIpAddressInfo(String ip) =>
       _twoIpDataSource.getIpAddressInfo(ip);
 }

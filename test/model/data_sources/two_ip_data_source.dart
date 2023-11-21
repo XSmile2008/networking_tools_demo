@@ -58,7 +58,7 @@ abstract class _TestValues {
     'date_updated': '2011-05-25',
   };
 
-static const MacAddressInfo macAddressInfo = MacAddressInfo(
+  static const MacAddressInfo macAddressInfo = MacAddressInfo(
     company: 'Super Micro Computer, Inc.',
     address: '2051 Junction Avenue San Jose CA US 95131 ',
     country: 'US',

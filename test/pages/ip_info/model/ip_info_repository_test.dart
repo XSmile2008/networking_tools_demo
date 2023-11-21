@@ -53,7 +53,7 @@ void main() {
       ).thenAnswer((_) async => _TestValues.ipAddressInfo);
 
       // When
-      final result  = await ipInfoRepository.getIpAddressInfo(_TestValues.ip);
+      final result = await ipInfoRepository.getIpAddressInfo(_TestValues.ip);
 
       // Then
       expect(result, _TestValues.ipAddressInfo);

@@ -10,13 +10,19 @@ class TwoIpDataSource {
     required Dio dio,
   }) : _dio = dio;
 
-  Future<IpAddressInfo> getIpAddressInfo(String ip) => _dio.get(
+  Future<IpAddressInfo?> getIpAddressInfo(String ip) => _dio.get(
         '/geo.json',
         queryParameters: {'ip': ip},
-      ).then((response) => IpAddressInfo.fromJson(response.data));
+      ).then((response) {
+        if (response.data == null) return null;
+        return IpAddressInfo.fromJson(response.data);
+      });
 
-  Future<MacAddressInfo> getMacAddressInfo(String mac) => _dio.get(
+  Future<MacAddressInfo?> getMacAddressInfo(String mac) => _dio.get(
         '/mac.json',
         queryParameters: {'mac': mac},
-      ).then((response) => MacAddressInfo.fromJson(response.data));
+      ).then((response) {
+        if (response.data == null) return null;
+        return MacAddressInfo.fromJson(response.data);
+      });
 }

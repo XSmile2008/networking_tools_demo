@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:networking_tools_demo/arch/bloc_side_effects_handler.dart';
 import 'package:networking_tools_demo/pages/ip_info/view/ip_info_page.dart';
+import 'package:networking_tools_demo/pages/mac_info/view/mac_info_page.dart';
 
 import '../cubit/home_cubit.dart';
 
@@ -23,7 +24,7 @@ class HomeView extends StatelessWidget {
               ),
               Visibility(
                 visible: state.selectedTab == HomeTab.macInfo,
-                child: const IpInfoPage(),
+                child: const MacInfoPage(),
               ),
             ],
           ),

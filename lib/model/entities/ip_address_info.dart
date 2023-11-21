@@ -25,26 +25,26 @@ class IpAddressInfo extends Equatable {
 
   @override
   List<Object?> get props => [
-    ip,
-    countryCode,
-    country,
-    region,
-    city,
-    zipCode,
-    latitude,
-    longitude,
-    timeZone,
-  ];
+        ip,
+        countryCode,
+        country,
+        region,
+        city,
+        zipCode,
+        latitude,
+        longitude,
+        timeZone,
+      ];
 
   factory IpAddressInfo.fromJson(Map<String, dynamic> json) => IpAddressInfo(
-    ip: json['ip'],
-    countryCode: json['country_code'],
-    country: json['country'],
-    region: json['region'],
-    city: json['city'],
-    zipCode: json['zip_code'],
-    latitude: json['latitude'],
-    longitude: json['longitude'],
-    timeZone: json['time_zone'],
-  );
+        ip: json['ip'],
+        countryCode: json['country_code'],
+        country: json['country'],
+        region: json['region'],
+        city: json['city'],
+        zipCode: json['zip_code'],
+        latitude: json['latitude'],
+        longitude: json['longitude'],
+        timeZone: json['time_zone'],
+      );
 }

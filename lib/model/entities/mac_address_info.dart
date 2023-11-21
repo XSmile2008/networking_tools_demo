@@ -27,24 +27,24 @@ class MacAddressInfo extends Equatable {
 
   @override
   List<Object?> get props => [
-    company,
-    address,
-    country,
-    private,
-    oui,
-    blockSize,
-    dateCreated,
-    dateUpdated,
-  ];
+        company,
+        address,
+        country,
+        private,
+        oui,
+        blockSize,
+        dateCreated,
+        dateUpdated,
+      ];
 
   factory MacAddressInfo.fromJson(Map<String, dynamic> json) => MacAddressInfo(
-    company: json['company'] as String,
-    address: json['address'] as String,
-    country: json['country'] as String,
-    private: json['private'] as String,
-    oui: json['oui'] as String,
-    blockSize: json['block_size'] as String,
-    dateCreated: json['date_created'] as String,
-    dateUpdated: json['date_updated'] as String,
-  );
+        company: json['company'] as String,
+        address: json['address'] as String,
+        country: json['country'] as String,
+        private: json['private'] as String,
+        oui: json['oui'] as String,
+        blockSize: json['block_size'] as String,
+        dateCreated: json['date_created'] as String,
+        dateUpdated: json['date_updated'] as String,
+      );
 }

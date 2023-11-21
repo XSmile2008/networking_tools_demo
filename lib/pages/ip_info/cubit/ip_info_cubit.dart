@@ -26,7 +26,7 @@ class IpInfoCubit extends Cubit<IpInfoState> {
     if (!state.isValidIp) return;
     emit(state.loading());
     try {
-      final IpAddressInfo ipAddressInfo =
+      final IpAddressInfo? ipAddressInfo =
           await _repository.getIpAddressInfo(state.ip);
       emit(state.loaded(ipAddressInfo));
     } catch (e) {

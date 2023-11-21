@@ -47,7 +47,7 @@ class IpInfoState extends Equatable
 
   IpInfoState loading() => copyWith(isLoading: true);
 
-  IpInfoState loaded(IpAddressInfo ipAddressInfo) => copyWith(
+  IpInfoState loaded(IpAddressInfo? ipAddressInfo) => copyWith(
         isLoading: false,
         ipAddressInfo: ipAddressInfo,
       );

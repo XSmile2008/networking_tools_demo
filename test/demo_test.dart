@@ -1,21 +1,69 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:networking_tools_demo/utils/calculator.dart';
 
-// TODO: show changes of object under tests
-class Calculator {
-  int add(int a, int b) => a + b;
-
-  int subtract(int a, int b) => a - b;
-
-  int multiply(int a, int b) => a * b;
-
-  double divide(int a, int b) => a / b;
-}
-
+// TODO: show how to run tests
+// TODO: show test structure
+// TODO:   - main
+// TODO:   - setUp
+// TODO:   - group
+// TODO:   - test
+// TODO: show return value validation
+// TODO: show state changes validation (property changes)
+// TODO:   - show coverage
+// TODO: show system changes
+// TODO:   - mocks
+// TODO:   - verify
+// TODO:   - matchers
+// TODO: show TDD
 void main() {
-  late Calculator calculator = Calculator();
+  late Calculator calculator;
   setUp(() {
     calculator = Calculator();
   });
+
+  /*
+  group('uses counter tests', () {
+    test(
+      '''
+      ## Given:
+      - fresh version of `Calculator`
+      ## When:
+      - `add` is called with some parameters
+      ## Then:
+      - value of `useCount` should be 1
+      ''',
+      () {
+        // When
+        calculator.add(1, 1);
+
+        // Then
+        expect(calculator.useCount, 1);
+      },
+    );
+
+    test(
+      '''
+      ## Given:
+      - two operations was performed on `Calculator`
+      ## When:
+      - `divide` is called with some parameters
+      ## Then:
+      - value of `useCount` should be 3
+      ''',
+      () {
+        // Given
+        calculator.add(1, 1);
+        calculator.subtract(1, 1);
+
+        // When
+        calculator.divide(3, 1);
+
+        // Then
+        expect(calculator.useCount, 3);
+      },
+    );
+  });
+  */
 
   group('add tests', () {
     test(
@@ -231,6 +279,7 @@ void main() {
       },
     );
 
+    /* Test with DivideByZeroException
     test(
       '''.
       ## Given:
@@ -239,7 +288,7 @@ void main() {
       ## When:
       - `divide` is called with `a` and `b`
       ## Then should:
-      - return infinity
+      - throw `DivideByZeroException`
       ''',
       () {
         // Given
@@ -247,11 +296,35 @@ void main() {
         const b = 0;
 
         // When
-        final result = calculator.divide(a, b);
+        try {
+          calculator.divide(a, b);
+          fail('Should throw DivideByZeroException');
+        } catch (e) {
+          // Then
+          expect(e, isA<DivideByZeroException>());
+        }
+      },
+    );
+    */
+  });
+
+  /* Power tests
+  group('pow tests', () {
+    test(
+      '''
+      ## When:
+      - `pow` is called with 2 and 3 as args
+      ## Then should:
+      - return 8
+      ''',
+          () {
+        // When
+        final result = calculator.pow(2, 3);
 
         // Then
-        expect(result, double.infinity);
+        expect(result, 8);
       },
     );
   });
+  */
 }

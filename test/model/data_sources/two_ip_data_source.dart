@@ -86,11 +86,11 @@ void main() {
   group('getIpAddressInfo tests', () {
     test('''.
       ## Given:
-      - `TwoIpDataSource.getIpAddressInfo` will return some IP address info after being called with some `ip`
+      - `Dio.get` will return some `Response` where `data` contains JSON representation of IP address info
       ## When:
       - `getIpAddressInfo` is called with some `ip`
       ## Then should:
-      - return given IP address info
+      - return parsed IP address info
       ''', () async {
       // Given
       when(
@@ -119,11 +119,11 @@ void main() {
   group('getMacAddressInfo tests', () {
     test('''.
       ## Given:
-      - `TwoIpDataSource.getMacAddressInfo` will return some MAC address info after being called with some `mac`
+      - `Dio.get` will return some `Response` where `data` contains JSON representation of MAC address info
       ## When:
       - `getMacAddressInfo` is called with some `mac`
       ## Then should:
-      - return given MAC address info
+      - return parsed MAC address info
       ''', () async {
       // Given
       when(
